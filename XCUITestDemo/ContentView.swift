@@ -1,16 +1,57 @@
-//
-//  ContentView.swift
-//  XCUITestDemo
-//
-//  Created by Christian Vasquez on 7/7/22.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    @State private var username = ""
+    @State private var password = ""
+    @State private var hasWrongCredentials = false
+    @State private var showingLoginScreen = false
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            VStack {
+                Text("Login")
+                    .font(.largeTitle)
+                    .bold()
+                    .padding()
+                
+                TextField("Username", text: $username)
+                    .padding()
+                    .frame(width: 300, height: 50)
+                    .background(Color.black.opacity(0.05))
+                    .cornerRadius(10)
+                
+                SecureField("Password", text: $password)
+                    .padding()
+                    .frame(width: 300, height: 50)
+                    .background(Color.black.opacity(0.05))
+                    .cornerRadius(10)
+                
+                Button("Login") {
+                    authenticateUser(username: username, password: password)
+                }
+                .foregroundColor(.white)
+                .frame(width: 300, height: 50)
+                .background(Color.blue)
+                .cornerRadius(10)
+                .alert(isPresented: $hasWrongCredentials) {
+                    Alert(title: Text("Error"), message: Text("Username or password is incorrect, please try again"), dismissButton: .default(Text("OK")))
+                }
+                
+                NavigationLink(destination: Text("You're now logged in as @\(username)"), isActive: $showingLoginScreen) {
+                    EmptyView()
+                }
+            }
+        }
+    }
+    
+    func authenticateUser(username: String, password: String) {
+        let hasValidCredentials = username.lowercased() == "chris" && password.lowercased() == "pass123"
+        if (hasValidCredentials) {
+            hasWrongCredentials = false
+            showingLoginScreen = true
+        } else {
+            hasWrongCredentials = true
+        }
     }
 }
 
