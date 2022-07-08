@@ -1,6 +1,6 @@
 import XCTest
 
-class LoginScreen: Screen {
+class Login: Screen {
     let app: XCUIApplication
     
     init(app: XCUIApplication) {
