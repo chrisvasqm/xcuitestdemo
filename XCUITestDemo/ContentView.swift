@@ -26,9 +26,10 @@ struct ContentView: View {
                     .background(Color.black.opacity(0.05))
                     .cornerRadius(10)
                 
-                Button("Login") {
-                    authenticateUser(username: username, password: password)
-                }
+                Button(
+                    action: { authenticateUser(username: username, password: password) },
+                    label: { Text("Login").bold() }
+                )
                 .foregroundColor(.white)
                 .frame(width: 300, height: 50)
                 .background(Color.blue)
