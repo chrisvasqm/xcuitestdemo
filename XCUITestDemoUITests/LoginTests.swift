@@ -9,7 +9,8 @@ class LoginTests: XCTestCase {
     }
     
     func testApp_LoadsUp() {
-        sleep(3)
+        let title = app.staticTexts["Login"]
+        XCTAssert(title.exists)
     }
     
     override func tearDown() {
