@@ -34,7 +34,7 @@ struct ContentView: View {
                 .background(Color.blue)
                 .cornerRadius(10)
                 .alert(isPresented: $hasWrongCredentials) {
-                    Alert(title: Text("Error"), message: Text("Username or password is incorrect, please try again"), dismissButton: .default(Text("OK")))
+                    Alert(title: Text("Woops!"), message: Text("Looks like either your username or password are incorrect, please try again"), dismissButton: .default(Text("OK")))
                 }
                 
                 NavigationLink(destination: Text("You're now logged in as @\(username)"), isActive: $showingLoginScreen) {
