@@ -14,19 +14,10 @@ class LoginTests: XCTestCase {
     }
     
     func testLogin_InvalidCredentials_ShowsAlertDialog() {
-        let username = app.textFields["Username"]
-        username.tap()
-        username.typeText("wrongUsername")
-
-        let password = app.secureTextFields["Password"]
-        password.tap()
-        password.typeText("wrongPassword")
-
-        let buttonLogin = app.buttons["Login"]
-        buttonLogin.tap()
+        let login = LoginScreen(app: app)
+        login.signIn(username: "wrongUsername", password: "wrongPassword")
         
-        let alert = app.alerts["Woops!"]
-        XCTAssert(alert.exists)
+        XCTAssert(login.hasInvalidCredentials())
     }
     
     override func tearDown() {
