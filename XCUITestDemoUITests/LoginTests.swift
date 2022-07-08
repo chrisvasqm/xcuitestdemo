@@ -6,14 +6,14 @@ class LoginTests: BaseTest {
     func testLogin_InvalidCredentials_ShowsAlertDialog() {
         login.signIn(username: "wrongUsername", password: "wrongPassword")
         
-        XCTAssert(login.hasInvalidCredentials())
+        assert(login.hasInvalidCredentials())
     }
     
     func testLogin_ValidCredentials_RedirectToNextScreen() {
         login.signIn(username: "Chris", password: "pass123")
-        let home = HomeScreen(app: app)
+        let home = Home(app: app)
         
-        XCTAssert(home.isLoggedIn())
+        assert(home.isLoggedIn())
     }
     
 }
