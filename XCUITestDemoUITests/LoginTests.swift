@@ -8,11 +8,6 @@ class LoginTests: XCTestCase {
         app.launch()
     }
     
-    func testApp_LoadsUp() {
-        let title = app.staticTexts["Login"]
-        XCTAssert(title.exists)
-    }
-    
     func testLogin_InvalidCredentials_ShowsAlertDialog() {
         let login = LoginScreen(app: app)
         login.signIn(username: "wrongUsername", password: "wrongPassword")
