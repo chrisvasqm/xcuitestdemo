@@ -1,5 +1,5 @@
 import XCTest
 
-protocol Screen {
+internal protocol Screen {
     var app: XCUIApplication { get }
 }
