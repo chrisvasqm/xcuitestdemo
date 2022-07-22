@@ -1,7 +1,7 @@
 import XCTest
 
 class Login: Screen {
-    let app: XCUIApplication
+    internal let app: XCUIApplication
     
     init(app: XCUIApplication) {
         self.app = app
