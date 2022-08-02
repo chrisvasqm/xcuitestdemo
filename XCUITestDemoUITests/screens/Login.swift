@@ -7,17 +7,19 @@ class Login: Screen {
         self.app = app
     }
     
-    func signIn(username: String, password: String) {
-        let usernameTextField = app.textFields["Username"]
-        usernameTextField.tap()
-        usernameTextField.typeText(username)
+    func signIn(username: String, password: String) -> Home {
+        let fieldUsername = app.textFields["Username"]
+        fieldUsername.tap()
+        fieldUsername.typeText(username)
 
-        let passwordSecureTextField = app.secureTextFields["Password"]
-        passwordSecureTextField.tap()
-        passwordSecureTextField.typeText(password)
+        let fieldPassword = app.secureTextFields["Password"]
+        fieldPassword.tap()
+        fieldPassword.typeText(password)
 
         let buttonLogin = app.buttons["Login"]
         buttonLogin.tap()
+        
+        return Home(app: app)
     }
     
     func hasInvalidCredentials() -> Bool {
