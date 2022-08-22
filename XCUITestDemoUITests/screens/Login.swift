@@ -2,21 +2,24 @@ import XCTest
 
 class Login: Screen {
     internal let app: XCUIApplication
+    private let fieldUsername: XCUIElement
+    private let fieldPassword: XCUIElement
+    private let buttonLogin: XCUIElement
     
     init(app: XCUIApplication) {
         self.app = app
+        fieldUsername = app.textFields["Username"]
+        fieldPassword = app.secureTextFields["Password"]
+        buttonLogin = app.buttons["Login"]
     }
     
     func signIn(username: String, password: String) -> Home {
-        let fieldUsername = app.textFields["Username"]
         fieldUsername.tap()
         fieldUsername.typeText(username)
-
-        let fieldPassword = app.secureTextFields["Password"]
+        
         fieldPassword.tap()
         fieldPassword.typeText(password)
 
-        let buttonLogin = app.buttons["Login"]
         buttonLogin.tap()
         
         return Home(app: app)
