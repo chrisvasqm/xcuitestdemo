@@ -9,7 +9,7 @@ class LoginTests: BaseTest {
         assert(login.hasInvalidCredentials())
     }
     
-    func testLogin_ValidCredentials_RedirectToNextScreen() {
+    func testLogin_ValidCredentials_RedirectToHomeScreen() {
         let home = login.signIn(username: "Chris", password: "pass123")
         
         assert(home.isLoggedIn())
