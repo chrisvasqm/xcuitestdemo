@@ -1,6 +1,6 @@
 import XCTest
 
-class Home: Screen {
+class Home : PageObject {
     internal let app: XCUIApplication
     
     init(app: XCUIApplication) {

@@ -1,6 +1,6 @@
 import XCTest
 
-class Login: Screen {
+class Login : PageObject {
     internal let app: XCUIApplication
     private let fieldUsername: XCUIElement
     private let fieldPassword: XCUIElement

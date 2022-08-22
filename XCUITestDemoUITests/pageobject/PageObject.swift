@@ -1,5 +1,5 @@
 import XCTest
 
-internal protocol Screen {
+internal protocol PageObject {
     var app: XCUIApplication { get }
 }
