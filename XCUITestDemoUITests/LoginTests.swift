@@ -1,6 +1,6 @@
 import XCTest
 
-class LoginTests: BaseTest {
+class LoginTests : BaseTest {
     lazy var login = Login(app: app)
     
     func testLogin_InvalidCredentials_ShowsAlertDialog() {

@@ -1,6 +1,6 @@
 import XCTest
 
-class BaseTest: XCTestCase {
+class BaseTest : XCTestCase {
     lazy var app = XCUIApplication()
     
     override func setUp() {
