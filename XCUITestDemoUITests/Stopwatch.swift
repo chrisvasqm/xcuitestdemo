@@ -1,8 +1,12 @@
-//
-//  Stopwatch.swift
-//  XCUITestDemoUITests
-//
-//  Created by Christian Vasquez on 8/24/22.
-//
 
-import Foundation
+class Stopwatch {
+    private var isRunning = false
+    
+    func click() {
+        if isRunning {
+            isRunning = false
+        } else {
+            isRunning = true
+        }
+    }
+}
