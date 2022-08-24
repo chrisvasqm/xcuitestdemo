@@ -1,7 +1,7 @@
 import XCTest
 
 class LoginTests : BaseTest {
-    lazy var login = Login(app: app)
+    private lazy var login = Login(app: app)
     
     func testLogin_InvalidCredentials_ShowsAlertDialog() {
         login.signIn(username: "wrongUsername", password: "wrongPassword")

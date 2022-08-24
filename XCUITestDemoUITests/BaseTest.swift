@@ -1,7 +1,7 @@
 import XCTest
 
 class BaseTest : XCTestCase {
-    lazy var app = XCUIApplication()
+    internal lazy var app = XCUIApplication()
     
     override func setUp() {
         app.launch()
